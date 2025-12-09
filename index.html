@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Digital Dilemmas: A Civic Responsibility Game</title>
+<style>
+body { font-family: Georgia, serif; background: #f4f4f4; color: #333; }
+tw-story { max-width: 700px; margin: auto; }
+img, video, audio { max-width: 100%; margin-top: 1em; }
+</style>
+</head>
+<body>
+<tw-storydata name="Digital Dilemmas" startnode="1" creator="Twine" creator-version="2.3.14" ifid="D1234567-89AB-CDEF-0123-456789ABCDEF" format="Harlowe" format-version="2.1.0" options="" hidden>
+<tw-passagedata pid="1" name="Start">
+(set: $empathyScore to 0)
+(set: $exploitationScore to 0)
+
+You are a digital citizen navigating a world shaped by invisible algorithms, global labor, and persuasive data. Your choices will define your ethical compass.
+
+[[Begin your journey->Cobalt Mining]]
+</tw-passagedata>
+
+<tw-passagedata pid="2" name="Cobalt Mining">
+You are offered a new smartphone at a steep discount. But you learn it may be sourced from cobalt mined by children in the Congo.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Cobalt_mining_in_DRC.jpg" alt="Cobalt mining">
+
+Do you:
+* [[Buy the phone anyway|Buy Phone]]
+* [[Refuse and support ethical tech|Ethical Tech]]
+</tw-passagedata>
+
+<tw-passagedata pid="3" name="Buy Phone">
+(set: $exploitationScore to it + 1)
+
+You buy the phone. It's fast and sleek. But a part of you wonders about the cost.
+
+[[Next->Chatbot Dilemma]]
+</tw-passagedata>
+
+<tw-passagedata pid="4" name="Ethical Tech">
+(set: $empathyScore to it + 1)
+
+You choose a more expensive but ethically sourced device. It feels right.
+
+[[Next->Chatbot Dilemma]]
+</tw-passagedata>
+
+<tw-passagedata pid="5" name="Chatbot Dilemma">
+You interact with Arya, a chatbot used by your city to allocate housing. It denies your application with no explanation.
+
+<video controls width="400">
+  <source src="https://archive.org/download/algorithmic-bias/algorithmic-bias.mp4" type="video/mp4">
+</video>
+
+Do you:
+* [[Accept the decision|Accept Chatbot]]
+* [[Challenge the algorithm|Challenge Chatbot]]
+</tw-passagedata>
+
+<tw-passagedata pid="6" name="Accept Chatbot">
+(set: $exploitationScore to it + 1)
+
+You accept the decision. Life goes on, but you feel powerless.
+
+[[Next->COVID Dashboard]]
+</tw-passagedata>
+
+<tw-passagedata pid="7" name="Challenge Chatbot">
+(set: $empathyScore to it + 1)
+
+You demand transparency. A public hearing is held. Others join your cause.
+
+[[Next->COVID Dashboard]]
+</tw-passagedata>
+
+<tw-passagedata pid="8" name="COVID Dashboard">
+You see a COVID dashboard showing low infection rates. But you suspect the data is outdated and misleading.
+
+<audio controls>
+  <source src="https://archive.org/download/covid-dashboard-audio/covid-dashboard-audio.mp3" type="audio/mpeg">
+</audio>
+
+Do you:
+* [[Share it to reassure others|Share Dashboard]]
+* [[Investigate and publish your findings|Investigate Dashboard]]
+</tw-passagedata>
+
+<tw-passagedata pid="9" name="Share Dashboard">
+(set: $exploitationScore to it + 1)
+
+You share the dashboard. People feel safe, but the virus spreads.
+
+[[See your outcome->Ending]]
+</tw-passagedata>
+
+<tw-passagedata pid="10" name="Investigate Dashboard">
+(set: $empathyScore to it + 1)
+
+You expose the flaws. The dashboard is updated. Lives are saved.
+
+[[See your outcome->Ending]]
+</tw-passagedata>
+
+<tw-passagedata pid="11" name="Ending">
+(if: $empathyScore > $exploitationScore)[
+You chose empathy and civic responsibility. Your actions sparked change and inspired others.
+]
+(else:)[
+You chose comfort and convenience. The world moved on, but at what cost?
+]
+
+''Thank you for playing. Inspired by Bridle, Arya, Rosling, and StoryCorps.''
+</tw-passagedata>
+</tw-storydata>
+</body>
+</html>
